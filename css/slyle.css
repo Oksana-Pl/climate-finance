@@ -24,8 +24,6 @@ html{
     --red-dark: #CF260A;
 }
 
-
-
 body{
    background: url(../images/background.png);
    background-repeat: no-repeat;
@@ -41,4 +39,20 @@ body{
     width: 1294px;
     flex-direction: column;
     align-items: center;
+}
+
+.dashboard--inner, .contributions-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.main-header{
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 64px;
+    color: #fff;
+
+    text-shadow: 5px 4px 2.9px rgba(0, 0, 0, 0.25);
 }
