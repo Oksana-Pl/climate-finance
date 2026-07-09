@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="dashboard">
+    <section class="dashboard">
         <h1 class="main-header">Climate Finance Dashboard</h1>
         <div class="dashboard--inner">
             <div class="global-state">
@@ -54,7 +54,56 @@
                 </a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="contributions">
+        <h2 class="contributions-title">Add Contribution</h2>
+        <div class="contributions-inputs">
+            <form class="make-contribution">
+                <div class="form-group amount-group">
+                  <label for="amount">Amount</label>
+                  <div class="amount-wrapper">
+                    <input 
+                      type="number" 
+                      id="amount" 
+                      name="amount" 
+                      value="400"
+                      min="0"
+                    >
+                    <span class="amount-unit">B</span>
+                  </div>
+                </div>
+              
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <select id="category" name="category">
+                    <option value="Mitigation">Mitigation</option>
+                    <option value="Adaptation">Adaptation</option>
+                    <option value="Loss-damage" selected>Loss & Damage</option>
+                  </select>
+                </div>
+              
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <select id="country" name="country">
+                    <option value="ireland-eu" selected>Ireland and EU</option>
+                    <option value="us">US</option>
+                    <option value="china">China</option>
+                    <option value="emdes">EMDEs</option>
+                    <option value="petro-chemical-states">Petro-chemical States</option>
+                    <option value="uk">UK</option>
+                    <option value="sids">SIDS</option>
+                    <option value="ldcs">LDCs</option>
+                </select>
+                </div>
+              
+                <button type="submit" class="btn btn-add">ADD</button>
+                <button type="button" class="btn btn-remove">REMOVE</button>
+                <button type="reset" class="btn btn-reset">RESET ALL</button>
+              
+              </form>
+        </div>
+    </section>
 </div>
 
 
