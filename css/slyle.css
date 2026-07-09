@@ -1,0 +1,44 @@
+html{
+    box-sizing: border-box;
+}
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+:root {
+    --font-family: "Istok Web", sans-serif;
+    --second-family: "Lilita One", sans-serif;
+
+    --blue-dark: #2E89E9;
+    --blue-light: #52AAFD;
+    --yellow-light: #FFDB43;
+    --yellow-dark: #F7BB34;
+    --beige: #F9E9D4;
+    --purple: #9A66F0;
+    --green-light: #00DAAE;
+    --green-dark: #0A9B7D;
+    --grey-200: #D9D9D9;
+    --red-light: #F64E24;
+    --red-dark: #CF260A;
+}
+
+
+
+body{
+   background: url(../images/background.png);
+   background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   
+}
+
+.container{
+    max-width: 1294px;
+    margin: 0 auto;;
+    display: flex;
+    width: 1294px;
+    flex-direction: column;
+    align-items: center;
+}
