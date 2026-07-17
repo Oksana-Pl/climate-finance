@@ -1,10 +1,10 @@
-const CACHE_NAME = "climate-finance-v4";
+const CACHE_NAME = "climate-finance-v6";
 
 const APP_ASSETS = [
     "./",
     "./index.html",
-    "./manifest.webmanifest?v=4",
-    "./css/slyle.css?v=4",
+    "./manifest.webmanifest?v=6",
+    "./css/slyle.css?v=6",
     "./js/main.js?v=2",
     "./images/app-icon-192.png",
     "./images/app-icon-512.png",
@@ -12,7 +12,7 @@ const APP_ASSETS = [
     "./images/coin.svg",
     "./images/coins.png",
     "./images/coins.svg",
-    "./images/countries.svg?v=4",
+    "./images/countries.svg?v=6",
     "./images/settings.svg"
 ];
 
