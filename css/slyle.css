@@ -319,6 +319,8 @@ button {
 .side-actions {
     display: grid;
     gap: 38px;
+    align-content: start;
+    align-items: start;
     justify-items: center;
 }
 
@@ -326,6 +328,8 @@ button {
 .icon-button {
     display: inline-grid;
     place-items: center;
+    width: fit-content;
+    height: fit-content;
     padding: 0;
     border: 0;
     background: transparent;
