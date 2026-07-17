@@ -1,9 +1,9 @@
-const CACHE_NAME = "climate-finance-v1";
+const CACHE_NAME = "climate-finance-v2";
 
 const APP_ASSETS = [
     "./",
     "./index.html",
-    "./manifest.webmanifest",
+    "./manifest.webmanifest?v=2",
     "./css/slyle.css",
     "./js/main.js?v=2",
     "./images/app-icon-192.png",
