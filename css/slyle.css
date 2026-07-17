@@ -816,6 +816,799 @@ select:focus-visible {
     }
 }
 
+@media (min-width: 1121px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        height: 100vh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .view.is-active {
+        height: 100%;
+    }
+}
+
+@media (min-width: 1121px) and (max-height: 900px) {
+    .container {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .main-header,
+    .section-title {
+        font-size: 56px;
+    }
+
+    .dashboard-layout {
+        margin-top: 24px;
+    }
+
+    .global-state {
+        min-height: 430px;
+    }
+
+    .label-title {
+        font-size: 34px;
+    }
+
+    .pill {
+        min-height: 76px;
+        font-size: 42px;
+    }
+
+    .pill img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .desktop-thermometer {
+        height: 340px;
+        margin-top: 24px;
+    }
+
+    .coin-stack-desktop {
+        width: 105px;
+        margin-top: -34px;
+    }
+
+    .funding-state {
+        gap: 24px;
+    }
+
+    .fund-bars {
+        gap: 20px;
+    }
+
+    .fund-card {
+        min-height: 96px;
+        padding: 14px 30px;
+    }
+
+    .fund-card h2 {
+        font-size: 31px;
+    }
+
+    .fund-meter {
+        height: 34px;
+    }
+
+    .fund-card p {
+        font-size: 22px;
+    }
+
+    .fund-card p img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .contributions {
+        margin-top: 34px;
+    }
+
+    .contributions-title {
+        font-size: 44px;
+    }
+
+    .make-contribution {
+        gap: 18px;
+        margin-top: 22px;
+    }
+
+    .settings-panel {
+        min-height: auto;
+        padding: 26px 72px 30px;
+    }
+
+    .settings-panel h2 {
+        margin-bottom: 30px;
+        font-size: 56px;
+    }
+
+    .settings-form {
+        gap: 26px 64px;
+    }
+
+    .settings-targets,
+    .country-settings {
+        gap: 16px;
+    }
+
+    .settings-targets h2,
+    .settings-targets h3,
+    .country-settings h2,
+    .country-settings h3 {
+        margin-top: 14px;
+        font-size: 30px;
+    }
+
+    .settings-row {
+        font-size: 30px;
+    }
+
+    .settings-row input {
+        min-height: 66px;
+    }
+
+    .country-options {
+        gap: 18px 44px;
+    }
+
+    .country-check {
+        min-height: 56px;
+        font-size: 29px;
+    }
+
+    .check-box {
+        width: 48px;
+        height: 48px;
+    }
+
+    .country-check input:checked + .check-box::after {
+        left: 12px;
+        top: 5px;
+        width: 16px;
+        height: 29px;
+    }
+
+    .apply-button {
+        min-height: 76px;
+    }
+
+    .view-settings .settings-form {
+        margin-top: 42px;
+    }
+
+    .countries-top {
+        min-height: 84px;
+    }
+
+    .back-button,
+    .countries-settings-button,
+    .countries-settings-button img {
+        width: 82px;
+        height: 82px;
+    }
+
+    .back-button {
+        font-size: 78px;
+    }
+
+    .country-list {
+        gap: 28px 44px;
+        margin-top: 62px;
+    }
+
+    .country-total-item {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .country-total-item::before {
+        width: 80px;
+        height: 80px;
+        font-size: 34px;
+    }
+
+    .country-total-card {
+        min-height: 80px;
+        padding: 8px 22px 8px 24px;
+        font-size: 31px;
+    }
+
+    .country-total-card img {
+        width: 58px;
+    }
+
+    .country-total-value {
+        min-height: 52px;
+        padding: 0 18px;
+    }
+}
+
+@media (min-width: 1121px) and (max-height: 780px) {
+    .container {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .main-header,
+    .section-title {
+        font-size: 46px;
+    }
+
+    .dashboard-layout {
+        grid-template-columns: 220px minmax(0, 1fr) 82px;
+        gap: 14px;
+        margin-top: 14px;
+    }
+
+    .global-state {
+        min-height: 360px;
+    }
+
+    .label-title {
+        font-size: 30px;
+    }
+
+    .pill {
+        min-height: 64px;
+        gap: 10px;
+        border-width: 4px;
+        font-size: 36px;
+    }
+
+    .pill img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .target-pill {
+        padding: 8px 18px 9px 16px;
+    }
+
+    .current-pill {
+        padding: 8px 20px 9px 16px;
+    }
+
+    .desktop-thermometer {
+        width: 62px;
+        height: 275px;
+        margin-top: 18px;
+        border-width: 5px;
+    }
+
+    .desktop-thermometer::before {
+        inset: 34px 7px 14px;
+        background: repeating-linear-gradient(
+            to bottom,
+            transparent 0 14px,
+            var(--blue) 14px 18px,
+            transparent 18px 26px
+        );
+    }
+
+    .thermometer-indicator {
+        right: -31px;
+    }
+
+    .coin-stack-desktop {
+        width: 88px;
+        margin-top: -30px;
+    }
+
+    .funding-state {
+        gap: 14px;
+    }
+
+    .current-total {
+        gap: 12px;
+    }
+
+    .fund-bars {
+        gap: 14px;
+    }
+
+    .fund-card {
+        grid-template-columns: 156px minmax(180px, 1fr) 98px;
+        gap: 10px;
+        min-height: 78px;
+        padding: 9px 22px;
+        border-radius: 42px;
+    }
+
+    .fund-card h2 {
+        font-size: 27px;
+    }
+
+    .fund-meter {
+        height: 30px;
+    }
+
+    .fund-value {
+        padding: 3px 10px;
+        font-size: 18px;
+    }
+
+    .fund-card p {
+        gap: 8px;
+        font-size: 20px;
+    }
+
+    .fund-card p img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .side-actions {
+        gap: 24px;
+    }
+
+    .image-button img {
+        width: 78px;
+        height: 78px;
+    }
+
+    .contributions {
+        margin-top: 18px;
+    }
+
+    .contributions-title {
+        font-size: 36px;
+    }
+
+    .make-contribution {
+        gap: 14px;
+        margin-top: 14px;
+    }
+
+    .form-group {
+        gap: 5px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    input,
+    select {
+        min-height: 54px;
+        border-width: 4px;
+    }
+
+    input {
+        width: 96px;
+        font-size: 22px;
+    }
+
+    select {
+        width: 226px;
+        padding-left: 22px;
+        padding-right: 62px;
+        font-size: 19px;
+    }
+
+    .select-group::before {
+        right: 18px;
+        bottom: 11px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .select-group::after {
+        right: 25px;
+        bottom: 21px;
+        width: 18px;
+        height: 13px;
+    }
+
+    .amount-unit {
+        font-size: 24px;
+    }
+
+    .btn,
+    .btn-reset,
+    .apply-button {
+        min-height: 56px;
+        padding-inline: 22px;
+        border-width: 4px;
+        font-size: 26px;
+    }
+
+    .btn-reset {
+        min-width: 190px;
+    }
+
+    .settings-panel {
+        padding: 18px 56px 22px;
+    }
+
+    .settings-panel h2 {
+        margin-bottom: 22px;
+        font-size: 46px;
+    }
+
+    .settings-form {
+        gap: 18px 44px;
+        grid-template-columns: minmax(360px, 1fr) minmax(460px, 1fr);
+    }
+
+    .settings-targets,
+    .country-settings {
+        gap: 12px;
+    }
+
+    .settings-targets h2,
+    .settings-targets h3,
+    .country-settings h2,
+    .country-settings h3 {
+        margin-top: 10px;
+        font-size: 25px;
+    }
+
+    .settings-row {
+        gap: 10px;
+        font-size: 25px;
+    }
+
+    .settings-row input {
+        width: 82px;
+        min-height: 56px;
+        font-size: 21px;
+    }
+
+    .country-options {
+        gap: 12px 32px;
+    }
+
+    .country-check {
+        gap: 12px;
+        min-height: 48px;
+        font-size: 25px;
+    }
+
+    .check-box {
+        width: 42px;
+        height: 42px;
+        border-width: 5px;
+        border-radius: 14px;
+    }
+
+    .country-check input:checked + .check-box::after {
+        left: 10px;
+        top: 4px;
+        width: 14px;
+        height: 25px;
+        border-right-width: 7px;
+        border-bottom-width: 7px;
+    }
+
+    .apply-button {
+        min-width: 270px;
+    }
+
+    .view-settings .settings-form {
+        margin-top: 24px;
+    }
+
+    .countries-top {
+        min-height: 70px;
+    }
+
+    .back-button,
+    .countries-settings-button,
+    .countries-settings-button img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .back-button {
+        border-width: 4px;
+        font-size: 64px;
+    }
+
+    .country-list {
+        gap: 18px 34px;
+        margin-top: 34px;
+    }
+
+    .country-total-item {
+        grid-template-columns: 66px 1fr;
+        gap: 8px;
+    }
+
+    .country-total-item::before {
+        width: 66px;
+        height: 66px;
+        border-width: 4px;
+        font-size: 29px;
+    }
+
+    .country-total-card {
+        min-height: 66px;
+        padding: 7px 18px 7px 20px;
+        border-width: 4px;
+        border-radius: 36px;
+        font-size: 27px;
+    }
+
+    .country-total-card img {
+        width: 48px;
+    }
+
+    .country-total-value {
+        min-height: 44px;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 1121px) and (max-height: 700px) {
+    .container {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .main-header,
+    .section-title {
+        font-size: 40px;
+    }
+
+    .dashboard-layout {
+        grid-template-columns: 200px minmax(0, 1fr) 72px;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .global-state {
+        min-height: 320px;
+    }
+
+    .label-title {
+        font-size: 27px;
+    }
+
+    .pill {
+        min-height: 58px;
+        font-size: 32px;
+    }
+
+    .pill img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .desktop-thermometer {
+        width: 58px;
+        height: 235px;
+        margin-top: 14px;
+        border-radius: 29px 29px 14px 14px;
+    }
+
+    .thermometer-fill {
+        border-radius: 24px 24px 9px 9px;
+    }
+
+    .desktop-thermometer::before {
+        inset: 30px 7px 12px;
+        background: repeating-linear-gradient(
+            to bottom,
+            transparent 0 11px,
+            var(--blue) 11px 15px,
+            transparent 15px 23px
+        );
+    }
+
+    .thermometer-indicator {
+        right: -29px;
+        border-top-width: 10px;
+        border-bottom-width: 10px;
+        border-right-width: 22px;
+    }
+
+    .coin-stack-desktop {
+        width: 78px;
+        margin-top: -28px;
+    }
+
+    .funding-state {
+        gap: 10px;
+    }
+
+    .fund-bars {
+        gap: 10px;
+    }
+
+    .fund-card {
+        grid-template-columns: 140px minmax(160px, 1fr) 88px;
+        min-height: 68px;
+        padding: 7px 18px;
+        border-width: 4px;
+        border-radius: 36px;
+    }
+
+    .fund-card h2 {
+        font-size: 24px;
+    }
+
+    .fund-meter {
+        height: 26px;
+    }
+
+    .fund-value {
+        font-size: 16px;
+    }
+
+    .fund-card p {
+        font-size: 18px;
+    }
+
+    .fund-card p img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .side-actions {
+        gap: 18px;
+    }
+
+    .image-button img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .contributions {
+        margin-top: 10px;
+    }
+
+    .contributions-title {
+        font-size: 32px;
+    }
+
+    .make-contribution {
+        gap: 11px;
+        margin-top: 10px;
+    }
+
+    input,
+    select {
+        min-height: 48px;
+    }
+
+    input {
+        width: 86px;
+        font-size: 20px;
+    }
+
+    select {
+        width: 210px;
+        font-size: 18px;
+    }
+
+    .select-group::before {
+        bottom: 8px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .select-group::after {
+        bottom: 18px;
+        width: 17px;
+        height: 12px;
+    }
+
+    .btn,
+    .btn-reset,
+    .apply-button {
+        min-height: 50px;
+        font-size: 23px;
+    }
+
+    .btn-reset {
+        min-width: 170px;
+    }
+
+    .settings-panel {
+        padding: 14px 46px 18px;
+    }
+
+    .settings-panel h2 {
+        margin-bottom: 16px;
+        font-size: 40px;
+    }
+
+    .settings-form {
+        gap: 12px 34px;
+    }
+
+    .settings-targets h2,
+    .settings-targets h3,
+    .country-settings h2,
+    .country-settings h3 {
+        margin-top: 6px;
+        font-size: 22px;
+    }
+
+    .settings-row {
+        font-size: 22px;
+    }
+
+    .settings-row input {
+        width: 76px;
+        min-height: 50px;
+    }
+
+    .country-options {
+        gap: 8px 24px;
+    }
+
+    .country-check {
+        min-height: 42px;
+        font-size: 22px;
+    }
+
+    .check-box {
+        width: 38px;
+        height: 38px;
+    }
+
+    .country-check input:checked + .check-box::after {
+        left: 9px;
+        top: 4px;
+        width: 12px;
+        height: 22px;
+    }
+
+    .view-settings .settings-form {
+        margin-top: 18px;
+    }
+
+    .countries-top {
+        min-height: 60px;
+    }
+
+    .back-button,
+    .countries-settings-button,
+    .countries-settings-button img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .back-button {
+        font-size: 54px;
+    }
+
+    .country-list {
+        gap: 12px 28px;
+        margin-top: 24px;
+    }
+
+    .country-total-item {
+        grid-template-columns: 58px 1fr;
+    }
+
+    .country-total-item::before {
+        width: 58px;
+        height: 58px;
+        font-size: 25px;
+    }
+
+    .country-total-card {
+        min-height: 58px;
+        font-size: 24px;
+    }
+
+    .country-total-card img {
+        width: 42px;
+    }
+
+    .country-total-value {
+        min-height: 38px;
+        padding: 0 14px;
+    }
+}
+
 @media (max-width: 1120px) {
     .container {
         padding: 32px 28px 56px;
