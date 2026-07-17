@@ -830,6 +830,46 @@ select:focus-visible {
     .view.is-active {
         height: 100%;
     }
+
+    .dashboard-layout {
+        align-items: stretch;
+    }
+
+    .funding-state {
+        align-self: stretch;
+        grid-template-rows: auto minmax(0, 1fr);
+        align-content: stretch;
+    }
+
+    .fund-bars {
+        align-self: stretch;
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        height: 100%;
+    }
+
+    .fund-card {
+        min-height: 0;
+    }
+}
+
+@media (min-width: 1121px) and (max-width: 1280px) {
+    .contributions {
+        margin-top: 28px;
+    }
+
+    .make-contribution {
+        display: grid;
+        grid-template-columns: max-content max-content max-content;
+        gap: 18px;
+        align-items: end;
+        justify-content: center;
+        margin-top: 18px;
+    }
+
+    .make-contribution .btn,
+    .make-contribution .btn-reset {
+        justify-self: center;
+    }
 }
 
 @media (min-width: 1121px) and (max-height: 900px) {
@@ -1341,6 +1381,23 @@ select:focus-visible {
     .country-total-value {
         min-height: 44px;
         padding: 0 16px;
+    }
+}
+
+@media (min-width: 1121px) and (max-width: 1280px) and (max-height: 780px) {
+    .contributions {
+        margin-top: 6px;
+    }
+
+    .make-contribution {
+        gap: 10px;
+        margin-top: 8px;
+    }
+
+    .btn,
+    .btn-reset,
+    .apply-button {
+        min-height: 52px;
     }
 }
 
