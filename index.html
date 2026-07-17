@@ -3,116 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate Finances</title>
+    <meta name="description" content="Interactive climate finance dashboard game for tracking mitigation, adaptation, loss and damage contributions, and country totals.">
+    <title>Climate Finance Dashboard</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/coin.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="css/slyle.css">
 </head>
 <body>
-<div class="container">
-    <section class="dashboard">
-        <h1 class="main-header">Climate Finance Dashboard</h1>
-        <div class="dashboard--inner">
-            <div class="global-state">
-                <div class="global-target">
-                    <h4>Target</h4>
-                    <div class="global-target--inner">
-                        <img class="global-target-img" src="images/coin.svg" alt="coin">
-                        <div class="set-global-target">1.3B</div>
-                    </div>
-                </div>
-                <div class="thermometer">
-                    <div class="thermometer--itself">
-                        <div class="thermometer-base">
-                            <div class="thermometer-fill"></div>
-                            <div class="thermometer-marker"></div>
+<div class="app" data-view="dashboard">
+    <header class="mobile-header" aria-label="Mobile navigation">
+        <button class="icon-button menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Main navigation">
+            <button class="menu-link is-active" type="button" data-view-target="dashboard">Climate Finance Dashboard</button>
+            <button class="menu-link" type="button" data-view-target="settings">Session Settings</button>
+            <button class="menu-link" type="button" data-view-target="countries">Contributions by country</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="view view-dashboard is-active" id="dashboard-view" aria-labelledby="dashboard-title">
+            <h1 class="main-header" id="dashboard-title">Climate Finance Dashboard</h1>
+            <div class="dashboard-layout">
+                <aside class="global-state" aria-label="Global target progress">
+                    <div class="target-card">
+                        <span class="label-title">Target:</span>
+                        <div class="pill target-pill">
+                            <img src="images/coin.svg" alt="" aria-hidden="true">
+                            <span id="global-target-label">1.3T</span>
                         </div>
                     </div>
-                    <img class="thermometer-img" src="images/coins.png" alt="coins">
-                </div>
-            </div>
 
-            <div class="current-state">
-                <div class="current-total">
-                    <h4>Current Total:</h4>
-                    <div class="current-total--inner">
-                        <img class="current-total-img" src="images/coin.svg" alt="coin">
-                        <div class="set-current-total">700B</div>
+                    <div class="desktop-thermometer" aria-hidden="true">
+                        <div class="thermometer-fill" id="thermometer-fill"></div>
+                        <span class="thermometer-indicator" id="thermometer-indicator"></span>
                     </div>
-                </div>
-                <div class="current-bars">
-                    <div class="mitigation"></div>
-                    <div class="adaptation"></div>
-                    <div class="lossDamage"></div>
-                </div>
+                    <img class="coin-stack coin-stack-desktop" src="images/coins.png" alt="" aria-hidden="true">
+                </aside>
+
+                <section class="funding-state" aria-label="Current funding progress">
+                    <div class="current-total">
+                        <span class="label-title">Current Total:</span>
+                        <div class="pill current-pill">
+                            <img src="images/coin.svg" alt="" aria-hidden="true">
+                            <span id="current-total-label">0B</span>
+                        </div>
+                    </div>
+
+                    <div class="mobile-global-meter" aria-label="Global target progress">
+                        <div class="target-card mobile-target-card">
+                            <span class="label-title">Target:</span>
+                            <div class="pill target-pill">
+                                <img src="images/coin.svg" alt="" aria-hidden="true">
+                                <span id="mobile-global-target-label">1.3T</span>
+                            </div>
+                        </div>
+                        <img class="coin-stack coin-stack-mobile" src="images/coins.png" alt="" aria-hidden="true">
+                        <div class="global-bar">
+                            <span class="global-fill" id="global-fill"></span>
+                            <span class="global-tick-track" aria-hidden="true"></span>
+                            <span class="global-indicator" id="global-indicator"></span>
+                        </div>
+                    </div>
+
+                    <div class="fund-bars" aria-label="Funding goals">
+                        <article class="fund-card" data-fund-card="mitigation">
+                            <h2>Mitigation</h2>
+                            <div class="fund-meter">
+                                <span class="fund-fill" data-fund-fill="mitigation"></span>
+                                <span class="fund-value" data-fund-value="mitigation">$0B</span>
+                            </div>
+                            <p><img src="images/coin.svg" alt="" aria-hidden="true"> <span data-fund-target="mitigation">355B</span></p>
+                        </article>
+
+                        <article class="fund-card" data-fund-card="adaptation">
+                            <h2>Adaptation</h2>
+                            <div class="fund-meter">
+                                <span class="fund-fill" data-fund-fill="adaptation"></span>
+                                <span class="fund-value" data-fund-value="adaptation">$0B</span>
+                            </div>
+                            <p><img src="images/coin.svg" alt="" aria-hidden="true"> <span data-fund-target="adaptation">365B</span></p>
+                        </article>
+
+                        <article class="fund-card" data-fund-card="lossDamage">
+                            <h2>Loss &amp;<br>Damage</h2>
+                            <div class="fund-meter">
+                                <span class="fund-fill" data-fund-fill="lossDamage"></span>
+                                <span class="fund-value" data-fund-value="lossDamage">$0B</span>
+                            </div>
+                            <p> <img src="images/coin.svg" alt="" aria-hidden="true"> <span data-fund-target="lossDamage">580B</span></p>
+                        </article>
+                    </div>
+                </section>
+
+                <nav class="side-actions" aria-label="Dashboard actions">
+                    <button class="image-button settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel" aria-label="Open session settings">
+                        <img src="images/settings.svg" alt="" aria-hidden="true">
+                    </button>
+                    <button class="image-button countries-toggle" type="button" data-view-target="countries" aria-label="Open contributions by country">
+                        <img src="images/countries.svg" alt="" aria-hidden="true">
+                    </button>
+                </nav>
             </div>
 
-            <div class="icons-control">
-                <a class="settings" href="#">
-                    <img class="settings-icon" src="images/settings.svg" alt="settings icon">
-                </a>
-                <a class="countries-list" href="#">
-                    <img class="countries-icon" src="images/countries.svg" alt="planet/world icon">
-                </a>
-            </div>
-        </div>
-    </section>
+            <section class="contributions" aria-labelledby="contribution-title">
+                <h2 class="contributions-title" id="contribution-title">Add Contribution</h2>
+                <form class="make-contribution" id="contribution-form">
+                    <div class="form-group amount-group">
+                        <label for="amount">Amount</label>
+                        <div class="amount-wrapper">
+                            <input type="number" id="amount" name="amount" value="0" min="0" step="1" inputmode="decimal">
+                            <span class="amount-unit">B</span>
+                        </div>
+                    </div>
 
-    <section class="contributions">
-        <h2 class="contributions-title">Add Contribution</h2>
-        <div class="contributions-inputs">
-            <form class="make-contribution">
-                <div class="form-group amount-group">
-                  <label for="amount">Amount</label>
-                  <div class="amount-wrapper">
-                    <input 
-                      type="number" 
-                      id="amount" 
-                      name="amount" 
-                      value="400"
-                      min="0"
-                    >
-                    <span class="amount-unit">B</span>
-                  </div>
-                </div>
-              
-                <div class="form-group">
-                  <label for="category">Category</label>
-                  <select id="category" name="category">
-                    <option value="Mitigation">Mitigation</option>
-                    <option value="Adaptation">Adaptation</option>
-                    <option value="Loss-damage" selected>Loss & Damage</option>
-                  </select>
-                </div>
-              
-                <div class="form-group">
-                  <label for="country">Country</label>
-                  <select id="country" name="country">
-                    <option value="ireland-eu" selected>Ireland and EU</option>
-                    <option value="us">US</option>
-                    <option value="china">China</option>
-                    <option value="emdes">EMDEs</option>
-                    <option value="petro-chemical-states">Petro-chemical States</option>
-                    <option value="uk">UK</option>
-                    <option value="sids">SIDS</option>
-                    <option value="ldcs">LDCs</option>
-                </select>
-                </div>
-              
-                <button type="submit" class="btn btn-add">ADD</button>
-                <button type="button" class="btn btn-remove">REMOVE</button>
-                <button type="button" class="btn-reset">RESET ALL</button>
-              
-              </form>
-        </div>
-    </section>
+                    <div class="form-group select-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="mitigation">Mitigation</option>
+                            <option value="adaptation">Adaptation</option>
+                            <option value="lossDamage" selected>Loss &amp; Damage</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group select-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country"></select>
+                    </div>
+
+                    <button type="submit" class="btn btn-add">ADD</button>
+                    <button type="button" class="btn btn-remove" id="remove-button">REMOVE</button>
+                    <button type="button" class="btn btn-reset" id="reset-button">RESET ALL</button>
+                </form>
+            </section>
+        </section>
+
+        <section class="view view-settings" id="settings-view" aria-labelledby="settings-title">
+            <h1 class="section-title" id="settings-title">Session Settings</h1>
+            <form class="settings-form" id="settings-form">
+                <section class="settings-targets" aria-label="Finance targets">
+                    <label class="settings-row target-row">
+                        <span>Climate Finance Target:</span>
+                        <span class="currency">$</span>
+                        <input type="number" id="setting-global" value="1.3" min="0" step="0.1">
+                        <span>T</span>
+                    </label>
+
+                    <h2>Funding Goals:</h2>
+                    <label class="settings-row">
+                        <span>Mitigation:</span>
+                        <span class="currency">$</span>
+                        <input type="number" id="setting-mitigation" value="355" min="1" step="1">
+                        <span>B</span>
+                    </label>
+                    <label class="settings-row">
+                        <span>Adaptation:</span>
+                        <span class="currency">$</span>
+                        <input type="number" id="setting-adaptation" value="365" min="1" step="1">
+                        <span>B</span>
+                    </label>
+                    <label class="settings-row">
+                        <span>Loss &amp; Damage:</span>
+                        <span class="currency">$</span>
+                        <input type="number" id="setting-lossDamage" value="580" min="1" step="1">
+                        <span>B</span>
+                    </label>
+                </section>
+
+                <section class="country-settings" aria-labelledby="participating-title">
+                    <h2 id="participating-title">Participating Countries:</h2>
+                    <div class="country-options" id="country-options"></div>
+                </section>
+
+                <button type="submit" class="btn apply-button">APPLY SETTINGS</button>
+            </form>
+        </section>
+
+        <section class="view view-countries" id="countries-view" aria-labelledby="countries-title">
+            <div class="countries-top">
+                <button class="image-button back-button" type="button" data-view-target="dashboard" aria-label="Back to dashboard">
+                    <span aria-hidden="true">‹</span>
+                </button>
+                <h1 class="section-title" id="countries-title">Contributions by Country</h1>
+                <button class="image-button countries-settings-button settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel" aria-label="Open session settings">
+                    <img src="images/settings.svg" alt="" aria-hidden="true">
+                </button>
+            </div>
+            <ol class="country-list" id="country-list"></ol>
+        </section>
+    </main>
+
+    <aside class="settings-panel" id="settings-panel" aria-label="Session settings panel" aria-hidden="true">
+        <h2>Session Settings</h2>
+        <form class="settings-form panel-settings-form" id="panel-settings-form"></form>
+    </aside>
 </div>
 
-
-
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>
